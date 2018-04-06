@@ -2,13 +2,14 @@ package test;
 
 import java.util.Scanner;
 
-//求最大子数组之和
+//姹傛渶澶у瓙鏁扮粍涔嬪拰
 
 public class maxSubArray {
 
 	public static int getMaxSubArray(int[] arr) {
 		
 		int maxSum = Integer.MIN_VALUE;
+		//涓ゆ閬嶅巻鏁扮粍
 		for(int i = 0;i < arr.length;i++) {
 			int sum = 0;
 			for(int j = i;j < arr.length;j++) {
@@ -24,7 +25,7 @@ public class maxSubArray {
 		//int[] array = {1,-2,4,8,-4,7,-1,-5};
 		
 		Scanner sc = new Scanner(System.in);
-		//输入数组长度
+		//杈撳叆鏁扮粍闀垮害
 		int n = sc.nextInt();
 		int array[] = new int[n];
 		for(int i = 0;i < n;i++) {
