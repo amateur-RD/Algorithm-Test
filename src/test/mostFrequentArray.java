@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-//ÕÒ³öÊı×éÖĞÖØ¸´ÔªËØ×î¶àµÄÊı
+//æ‰¾å‡ºæ•°ç»„ä¸­é‡å¤å…ƒç´ æœ€å¤šçš„æ•°
 public class mostFrequentArray {
 	
 	public static int getMostFrequentArray(int[] arr) {
 		
 		int result = 0;
-		//Í³¼ÆÃ¿¸öÔªËØ³öÏÖµÄ´ÎÊı£¬´æµ½HashMapÖĞ£¬keyÎªÔªËØÖµ  valueÎªÔªËØ³öÏÖ´ÎÊı
+		//ç»Ÿè®¡æ¯ä¸ªå…ƒç´ å‡ºç°çš„æ¬¡æ•°ï¼Œå­˜åˆ°HashMapä¸­ï¼Œkeyä¸ºå…ƒç´ å€¼  valueä¸ºå…ƒç´ å‡ºç°æ¬¡æ•°
 		Map<Integer, Integer> m = new HashMap<Integer, Integer>();
 		for(int i = 0;i < arr.length;i++) {
 			if(m.containsKey(arr[i])) {
@@ -23,6 +23,7 @@ public class mostFrequentArray {
 		}
 		
 		int most = 0;
+		//éå†HashMap
 		Iterator iterator = m.entrySet().iterator();
 		while(iterator.hasNext()) {
 			Map.Entry entry = (Map.Entry) iterator.next();
