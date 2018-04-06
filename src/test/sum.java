@@ -12,7 +12,7 @@ public class sum {
     public static void main(String[] args) {  
         Scanner input=new Scanner(System.in);  
         while(input.hasNext()) {
-        	n=input.nextInt();  
+            n=input.nextInt();  
             c=input.nextInt();
         }
         String str;
@@ -41,8 +41,8 @@ public class sum {
 //        	str = input.nextLine();
 //
 //          list = new ArrayList<Integer>();
-//          Scanner myinput2 = new Scanner(str);	//Ä¬ÈÏ¿Õ¸ñ×÷·Ö¸ô·û
-//          while(myinput2.hasNext())    //Öğ¸ö½ÓÊÕµ±Ç°´®ÀïµÄ×Ö·û/Êı×Ö          
+//          Scanner myinput2 = new Scanner(str);	//é»˜è®¤ç©ºæ ¼ä½œåˆ†éš”ç¬¦
+//          while(myinput2.hasNext())    //é€ä¸ªæ¥æ”¶å½“å‰ä¸²é‡Œçš„å­—ç¬¦/æ•°å­—          
 //         	 {
 //          list.add(myinput2.nextInt());
 //          }
