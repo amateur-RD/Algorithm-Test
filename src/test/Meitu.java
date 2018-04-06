@@ -2,6 +2,7 @@ package test;
 
 import java.util.Scanner;
 
+//美图2018笔试题  
 public class Meitu {
 
 	public static int get(int n) {
