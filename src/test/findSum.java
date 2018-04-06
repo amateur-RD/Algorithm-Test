@@ -1,13 +1,13 @@
 package test;
 
-//ÇóÊı×éÖĞÁ½Á½Ïà¼ÓµÈÓÚ20µÄ×éºÏÖÖÊı
+//æ±‚æ•°ç»„ä¸­ä¸¤ä¸¤ç›¸åŠ ç­‰äº20çš„ç»„åˆæ•°çš„ç§ç±»
 public class findSum {
 
 	public static void getFindSum(int[] arr) {
 		for(int i = 0;i < arr.length;i++) {
 			for(int j = i + 1;j < arr.length;j++) {
 				if(arr[i] + arr[j] == 20)
-					System.out.println("×éºÏÊıÎª£º" + arr[i] + "," + arr[j]);
+					System.out.println("ç»„åˆæ•°ä¸ºï¼š" + arr[i] + "," + arr[j]);
 			}
 		}
 	}
