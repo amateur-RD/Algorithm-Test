@@ -4,38 +4,40 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class qunar1 {
-	static int[][] matrix;// ÁÚ½Ó¾ØÕó
-	static int len;// µ¥´Ê¸öÊı
-	static ArrayList<Integer> path;// µ¥ÌõÂ·¾¶¼ÇÂ¼
-	static ArrayList<ArrayList<Integer>> paths;// ËùÓĞÂ·¾¶
+	// é‚»æ¥çŸ©é˜µ
+	static int[][] matrix;
+	// å•è¯ä¸ªæ•°
+	static int len;
+	static ArrayList<Integer> path;// å•æ¡è·¯å¾„è®°å½•
+	static ArrayList<ArrayList<Integer>> paths;// æ‰€æœ‰è·¯å¾„
 
 	public static void main(String[] args) {
-		// ½ÓÊÕÊäÈë²ÎÊı
+		// æ¥æ”¶è¾“å…¥å‚æ•°
 		Scanner scanner = new Scanner(System.in);
 		String init = scanner.nextLine();
 		//String end = scanner.nextLine();
 		String list = scanner.nextLine();
 		scanner.close(); 
-		// ½«ËùÓĞµ¥´Ê´æÈëÊı×é
+		// å°†æ‰€æœ‰å•è¯å­˜å…¥æ•°ç»„
 		len = list.split(" ").length + 1;
 		String[] vocabulary = new String[len];
 		vocabulary[0] = init;
 		int start = 0;
-		// ×îÖÕ´ÊËùÔÚµÄË÷Òı
+		// æœ€ç»ˆè¯æ‰€åœ¨çš„ç´¢å¼•
 		for (int i = 1; i < len; i++) {
 			vocabulary[i] = list.split(" ")[i - 1];
-			//System.out.println("ÄæĞò£º"+swapWord(init));
+			//System.out.println("é€†åºï¼š"+swapWord(init));
 			if (vocabulary[i].equals(swapWord(init))) {
 				start = i;
 			}
 		} 
-		// ¹¹½¨ÁÚ½Ó¾ØÕó
+		// æ„å»ºé‚»æ¥çŸ©é˜µ
 		matrix = nearMatrix(vocabulary);
 		path = new ArrayList<Integer>();
 		paths = new ArrayList<ArrayList<Integer>>(); 
-		// ¿ªÊ¼ËÑË÷ 
+		// å¼€å§‹æœç´¢ 
 		look(start); 
-		// Ñ°ÕÒ×î¶ÌÂ·¾¶
+		// å¯»æ‰¾æœ€çŸ­è·¯å¾„
 		int min = Integer.MAX_VALUE;
 		for (int i = 0; i < paths.size(); i++) {
 			int k = paths.get(i).size();
@@ -56,7 +58,7 @@ public class qunar1 {
 					break;
 				}
 			}
-		} // Ìí¼ÓÂ·¾¶
+		} // æ·»åŠ è·¯å¾„
 		paths.add(path);
 		path = new ArrayList<Integer>();
 		int length = paths.get(paths.size() - 1).size();
@@ -64,7 +66,7 @@ public class qunar1 {
 			path.add(paths.get(paths.size() - 1).get(i));
 		}
 	} 
-	// ¹¹½¨ÁÚ½Ó¾ØÕó public static
+	// æ„å»ºé‚»æ¥çŸ©é˜µ public static
 
 	static int[][] nearMatrix(String[] vac) {
 		int[][] matrix = new int[vac.length][vac.length];
@@ -75,7 +77,7 @@ public class qunar1 {
 		}
 		return matrix;
 	} 
-	// ±È½ÏÁ½¸öµ¥´ÊÊÇ·ñ¿É±ä»»
+	// æ¯”è¾ƒä¸¤ä¸ªå•è¯æ˜¯å¦å¯å˜æ¢
 	public static int compare(String s1, String s2) {
 		int k = 0;
 		for (int i = 0; i < s1.length(); i++) {
@@ -89,7 +91,7 @@ public class qunar1 {
 		return k;
 	}
 	
-	//ÇóÄæĞò
+	//æ±‚é€†åº
 	public static String swapWord(String s) {
 		char[] cArr = s.toCharArray();
 		swap(cArr,0,cArr.length - 1);
