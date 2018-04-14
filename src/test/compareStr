@@ -1,3 +1,5 @@
+package test;
+
 import java.util.Scanner;
 
 //比较两个字符串是否由相同的字符组成  
