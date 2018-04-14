@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+//比较两个字符串是否由相同的字符组成  
+public class compareStr {
+
+	public static void compare(String s1, String s2) {
+		byte[] b1 = s1.getBytes();
+		byte[] b2 = s2.getBytes();
+		
+		int[] arr = new int[256];
+		for(int i = 0;i < b1.length;i++) {
+			//将字符串中字符对应的ASCII值作为数组下标
+			arr[b1[i] - '0']++;
+		}
+		
+		for(int j = 0;j < b2.length;j++) {
+			arr[b2[j] - '0']--;
+		}
+		
+		for(int i = 0;i < arr.length;i++) {
+			if(arr[i] != 0) {
+				System.out.println("no equal!");
+				break;
+			}
+		}
+		
+		System.out.println("equal!");
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s1 = sc.nextLine();
+		String s2 = sc.nextLine();
+		sc.close();
+		compare(s1, s2);
+	}
+}
