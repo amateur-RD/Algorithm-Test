@@ -1,0 +1,36 @@
+package test;
+
+import java.util.Scanner;
+
+public class huawei2 {
+	
+	public static int getCount(int[] arr) {
+		
+		int heigh = 0, low = 0, ph = 0, count=0;
+		
+		while(heigh < arr.length-1){
+			count++;
+			ph = heigh;
+			for(int i = low;i <= ph;i++){
+				heigh = Math.max(heigh, i+arr[i]);
+			}
+			low = ph + 1;
+		}
+		return count;
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		int[] arr=new int[n];
+		
+		for(int i = 0;i < n;i++){
+			arr[i] = sc.nextInt();
+		}
+		sc.close();
+		
+		System.out.println(getCount(arr));
+	}
+}
