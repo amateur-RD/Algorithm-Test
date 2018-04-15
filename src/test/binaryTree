@@ -67,6 +67,19 @@ public class binaryTree {
 		}
 	}
 	
+	//先序遍历
+	public void preOrder() {
+		this.preOrder(this.root);
+	}
+	public void preOrder(Node node) {
+		if(node != null) {
+			System.out.print(node.element + " ");
+			preOrder(node.left);
+			preOrder(node.right);
+		}
+	}
+	
+	
 	
 	public static void main(String[] args) {
 		
@@ -74,6 +87,10 @@ public class binaryTree {
 		int[] data = {2,8,7,4,9,3,1,6,7,5};
 		bt.buildTree(data);
 		System.out.print("中序遍历：");
+		bt.inOrder();
+		System.out.println();
+		
+		System.out.print("先序遍历：");
 		bt.inOrder();
 	}
 }
