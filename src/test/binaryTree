@@ -91,6 +91,6 @@ public class binaryTree {
 		System.out.println();
 		
 		System.out.print("先序遍历：");
-		bt.inOrder();
+		bt.preOrder();
 	}
 }
