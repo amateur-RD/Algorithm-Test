@@ -1,0 +1,79 @@
+package test;
+
+//定义一个结点类
+class Node{
+	public int element;
+	public Node left;
+	public Node right;
+	
+	public Node(int e) {
+		this.element = e;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+public class binaryTree {
+	
+	public Node root;
+
+	public binaryTree() {
+		root = null;
+	}
+	
+	//调用insert方法，构建二叉树
+	public void buildTree(int[] arr) {
+		for(int i = 0;i < arr.length;i++) {
+			insert(arr[i]);
+		}
+	}
+	
+	//插入结点
+	public void insert(int element) {
+		Node node = new Node(element);
+		if(root == null) {
+			root = node;
+		}else {
+			Node current = root;
+			Node parent;
+			while(true) {
+				parent = current;
+				if(element < current.element) {
+					current = current.left;
+					if(current == null) {
+						parent.left = node;
+						return;
+					}
+				}else {
+					current = current.right;
+					if(current == null) {
+						parent.right = node;
+						return;
+					}
+				}
+			}
+		}
+	}
+	
+	//中序遍历
+	public void inOrder() {
+		this.inOrder(this.root);
+	}
+	public void inOrder(Node node) {
+		if(node != null) {
+			inOrder(node.left);
+			System.out.print(node.element + " ");
+			inOrder(node.right);
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		binaryTree bt = new binaryTree();
+		int[] data = {2,8,7,4,9,3,1,6,7,5};
+		bt.buildTree(data);
+		System.out.print("中序遍历：");
+		bt.inOrder();
+	}
+}
