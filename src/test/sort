@@ -1,0 +1,36 @@
+package test;
+
+//各种排序算法
+public class sort {
+
+	//冒泡排序
+	public static void BubbleSort(int[] arr) {
+		for(int i = 0;i < arr.length;i++) {
+			for(int j = 1;j < arr.length - i;j++) {
+				if(arr[j - 1] > arr[j]) {
+					int tmp = arr[j - 1];
+					arr[j - 1] = arr[j];
+					arr[j] = tmp;
+				}
+			}
+		}
+	}
+	
+
+	
+	public static void main(String[] args) {
+		int[] array = {5,4,9,8,7,6,0,1,3,2};
+		BubbleSort(array);
+		System.out.print("冒泡排序：");
+		for(int i = 0;i < array.length;i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+		
+		QuitSort(array,0,array.length - 1);
+		System.out.print("快速排序：");
+		for(int i = 0;i < array.length;i++) {
+			System.out.print(array[i] + " ");
+		}
+	}
+}
