@@ -91,6 +91,26 @@ public class binaryTree {
 		}
 	}
 	
+	//按层遍历
+	public void layerOrder() {
+		this.layerOrder(this.root);
+	}
+	public void layerOrder(Node node) {
+		LinkedList<Node> linkedList = new LinkedList<Node>();
+		linkedList.add(node);
+		while(!linkedList.isEmpty()) {
+			Node current = linkedList.poll();
+			System.out.print(current.element);
+			System.out.print(" ");
+			if(current.left != null) {
+				linkedList.add(current.left);
+			}
+			if(current.right != null) {
+				linkedList.add(current.right);
+			}
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -107,5 +127,11 @@ public class binaryTree {
 		
 		System.out.print("后序遍历：");
 		bt.postOrder();
+		System.out.println();
+		
+		System.out.print("按层遍历：");
+		bt.layerOrder();
+		
+		
 	}
 }
