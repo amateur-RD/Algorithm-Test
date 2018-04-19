@@ -79,6 +79,17 @@ public class binaryTree {
 		}
 	}
 	
+	//后序遍历
+	public void postOrder() {
+		this.postOrder(this.root);
+	}
+	public void postOrder(Node node) {
+		if(node != null) {
+			postOrder(node.left);
+			postOrder(node.right);
+			System.out.print(node.element + " ");
+		}
+	}
 	
 	
 	public static void main(String[] args) {
@@ -92,5 +103,9 @@ public class binaryTree {
 		
 		System.out.print("先序遍历：");
 		bt.preOrder();
+		System.out.println();
+		
+		System.out.print("后序遍历：");
+		bt.postOrder();
 	}
 }
