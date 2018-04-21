@@ -111,6 +111,29 @@ public class binaryTree {
 		}
 	}
 	
+	//二叉树反转
+	public void invertBinaryTree() {
+		this.invertBinaryTree(this.root);
+	}
+	
+	public void invertBinaryTree(Node node) {
+		LinkedList<Node> linkedList = new LinkedList<Node>();
+		linkedList.add(node);
+		while(!linkedList.isEmpty()) {
+			Node current = linkedList.poll();
+			Node tmp = current.left;
+			current.left = current.right;
+			current.right = tmp;
+			if(current.left != null) {
+				linkedList.add(current.left);
+			}
+			if(current.right != null) {
+				linkedList.add(current.right);
+			}
+		}
+	}
+	
+	
 	
 	public static void main(String[] args) {
 		
