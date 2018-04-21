@@ -154,6 +154,14 @@ public class binaryTree {
 		
 		System.out.print("按层遍历：");
 		bt.layerOrder();
+		System.out.println();
+		
+		//System.out.print("二叉树反转：");
+		bt.invertBinaryTree();
+		//System.out.println();
+		
+		System.out.print("反转后按层遍历：");
+		bt.layerOrder();
 		
 		
 	}
