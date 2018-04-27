@@ -1,6 +1,5 @@
 package test;
 
-//各种排序算法
 public class sort {
 
 	//冒泡排序
