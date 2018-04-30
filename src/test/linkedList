@@ -15,7 +15,19 @@ public class linkedList {
 	//定义头节点
 	public listNode head = null;
 	
-	
+	//添加节点
+	public void addNode(int e) {
+		listNode newNode = new listNode(e);
+		if(head == null) {
+			head = newNode;
+			return;
+		}
+		listNode tmp = head;
+		while(tmp.next != null) {
+			tmp = tmp.next;
+		}
+		tmp.next = newNode;
+	}
 	
 	public static void main(String[] args) {
 		linkedList list = new linkedList();
