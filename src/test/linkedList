@@ -1,0 +1,28 @@
+package test;
+
+//节点类
+class listNode {
+	public int element;
+	public listNode next;
+	public listNode(int e) {
+		this.element = e;
+		this.next = null;
+	}
+			
+}
+public class linkedList {
+
+	//定义头节点
+	public listNode head = null;
+	
+	
+	
+	public static void main(String[] args) {
+		linkedList list = new linkedList();
+		list.addNode(3);
+		list.addNode(1);
+		list.addNode(5);
+		list.addNode(3);
+		
+	}
+}
