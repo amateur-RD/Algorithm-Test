@@ -29,12 +29,28 @@ public class linkedList {
 		tmp.next = newNode;
 	}
 	
+	//打印链表
+	public void printList() {
+		listNode tmp = head;
+		//System.out.print("初始链表序列：");
+		while(tmp != null) {
+			System.out.print(tmp.element + " ");
+			tmp = tmp.next;
+		}
+		System.out.println(" ");
+	}
+	
 	public static void main(String[] args) {
 		linkedList list = new linkedList();
 		list.addNode(3);
 		list.addNode(1);
 		list.addNode(5);
+		list.addNode(7);
 		list.addNode(3);
+		
+		//打印链表
+		System.out.print("初始链表序列：");
+		list.printList();
 		
 	}
 }
