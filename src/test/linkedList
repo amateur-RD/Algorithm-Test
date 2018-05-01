@@ -40,6 +40,18 @@ public class linkedList {
 		System.out.println(" ");
 	}
 	
+	//链表长度
+	public int length() {
+		listNode tmp = head;
+		int length = 0;
+		while(tmp != null) {
+			length++;
+			tmp = tmp.next;
+		}
+		return length;
+		//System.out.println("链表长度：" + length);
+	}
+	
 	public static void main(String[] args) {
 		linkedList list = new linkedList();
 		list.addNode(3);
@@ -51,6 +63,9 @@ public class linkedList {
 		//打印链表
 		System.out.print("初始链表序列：");
 		list.printList();
+		
+		//链表长度
+		System.out.println("链表长度：" + list.length());
 		
 	}
 }
