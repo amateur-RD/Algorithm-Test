@@ -89,5 +89,9 @@ public class linkedList {
 		//链表长度
 		System.out.println("链表长度：" + list.length());
 		
+		//删除结点
+		list.deleteNode(4);
+		list.printList();
+		
 	}
 }
