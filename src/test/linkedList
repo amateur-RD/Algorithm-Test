@@ -52,6 +52,28 @@ public class linkedList {
 		//System.out.println("链表长度：" + length);
 	}
 	
+	//删除第index个结点
+	public void deleteNode(int index) {
+		if(index < 1 || index > this.length()) {
+			return;
+		}
+		//删除头结点
+		if(index == 1) {
+			head = head.next;
+			return;
+		}
+		//定义删除结点的前驱结点
+		listNode preNode = head;
+		//找到要删除结点的前驱结点
+		for(int i = 1;i < index - 1;i++) {
+			preNode = preNode.next;
+		}
+		//删除结点
+		listNode delNode = preNode.next;
+		preNode.next = delNode.next;
+		System.out.print("删除第" + index + "个结点后链表序列：");
+	}
+	
 	public static void main(String[] args) {
 		linkedList list = new linkedList();
 		list.addNode(3);
