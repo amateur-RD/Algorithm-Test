@@ -74,6 +74,24 @@ public class linkedList {
 		System.out.print("删除第" + index + "个结点后链表序列：");
 	}
 	
+	//删除链表中的重复元素
+	public void delDupNode() {
+		//hashmap 用于存放链表中元素
+		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+		listNode cur = head;
+		listNode pre = null;
+		while(cur != null) {
+			if(hm.containsKey(cur.element)) {
+				pre.next = cur.next;
+			}else {
+				//key为链表元素值，value为1
+				hm.put(cur.element, 1);
+				pre = cur;
+			}
+			cur = cur.next;
+		}
+	}
+	
 	public static void main(String[] args) {
 		linkedList list = new linkedList();
 		list.addNode(3);
@@ -91,6 +109,11 @@ public class linkedList {
 		
 		//删除结点
 		list.deleteNode(4);
+		list.printList();
+		
+		//删除重复结点
+		System.out.print("删除重复结点后链表序列：");
+		list.delDupNode();
 		list.printList();
 		
 	}
