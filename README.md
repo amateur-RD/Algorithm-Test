@@ -29,22 +29,9 @@
   * 程序SynchronizedTest2结果： 虽然test和test2属于不同对象，但是test和test2属于同一个类的不同实例，由于method1和method2都属于静态同步方法，所以调用的时候需要获取同一个类上monitor（每个类只对应一个class对象），所以也只能顺序的执行。
   * 程序SynchronizedTest3结果： 对于代码块的同步实质上需要获取Synchronized关键字后面括号中对象的monitor，由于这段代码中括号的内容都是this，而method1和method2又是通过同一的对象去调用的，所以进入同步块之前需要去竞争同一个对象上的锁，因此只能顺序执行同步块。
 
+## 总结
+* Synchronized是通过对象内部的一个叫做监视器锁（monitor）来实现的。但是监视器锁本质又是依赖于底层的操作系统的Mutex Lock来实现的。而操作系统实现线程之间的切换这就需要从用户态转换到内核态，这个成本非常高，状态之间的转换需要相对比较长的时间，这就是为什么Synchronized效率低的原因。
 
+* 因此，这种依赖于操作系统Mutex Lock所实现的锁我们称之为“重量级锁”。JDK中对Synchronized做的种种优化，其核心都是为了减少这种重量级锁的使用。JDK1.6以后，为了减少获得锁和释放锁所带来的性能消耗，提高性能，引入了“偏向锁”和“轻量级锁”。无锁 --> 偏向锁 --> 轻量级 --> 重量级
 
-
-* Web访问
-  * [noVNC](https://github.com/novnc/noVNC)工具实现在线Web访问虚拟机
-* 系统实现
-  * Java ssh2(Struts2 + Spring + Hibernate)实现整个系统的构建
-* 体系结构<br>
-  ![系统体系结构](https://github.com/amateur-RD/Embedded-Virtual-Online-System/raw/master/系统截图/体系结构.png)
-
-## 技术路线
-* 虚拟化
-  * Docker工具实现服务器虚拟化
-* Web访问
-  * [noVNC](https://github.com/novnc/noVNC)工具实现在线Web访问虚拟机
-* 系统实现
-  * Java ssh2(Struts2 + Spring + Hibernate)实现整个系统的构建
-* 体系结构<br>
-  ![系统体系结构](https://github.com/amateur-RD/Embedded-Virtual-Online-System/raw/master/系统截图/体系结构.png)
+## From[原文](https://mp.weixin.qq.com/s/o6qbzDP9T8b4OLDp78E67A)
