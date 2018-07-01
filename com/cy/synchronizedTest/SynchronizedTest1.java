@@ -9,11 +9,11 @@ package com.cy.synchronizedTest;
  *        2.修饰静态方法(见程序SynchronizedTest2)
  *        3.修饰代码块(见程序SynchronizedTest3)
  * 运行结果：method 1 start
-			method 1 execute
-			method 1 end
-			method 2 start
-			method 2 execute
-			method 2 end
+	    method 1 execute
+	    method 1 end
+	    method 2 start
+	    method 2 execute
+	    method 2 end
  */
 public class SynchronizedTest1 {
 	
