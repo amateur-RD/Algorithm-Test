@@ -1,14 +1,14 @@
 package com.cy.synchronizedTest;
 
 /*
- * synchronized ¹Ø¼ü×ÖÔ­Àí²âÊÔ
- * ×÷ÓÃ£º 1.È·±£Ïß³Ì»¥³âµÄ·ÃÎÊÍ¬²½´úÂë
- *       2.±£Ö¤¹²Ïí±äÁ¿µÄĞŞ¸ÄÄÜ¹»¼°Ê±¿É¼û
- *       3.ÓĞĞ§½â¾öÖØÅÅĞòÎÊÌâ
- * ÓÃ·¨£º 1.ĞŞÊÎÆÕÍ¨·½·¨(¼û³ÌĞòSynchronizedTest1,Ïß³Ì2ÒªµÈµ½Ïß³Ì1µÄmethod1Ö´ĞĞÍê³Éºó²Å¿ªÊ¼Ö´ĞĞmethod2·½·¨)
- * 		 2.ĞŞÊÎ¾²Ì¬·½·¨(¼û³ÌĞòSynchronizedTest2)
- *       3.ĞŞÊÎ´úÂë¿é(¼û³ÌĞòSynchronizedTest3)
- * ÔËĞĞ½á¹û£ºmethod 1 start
+ * synchronized å…³é”®å­—åŸç†æµ‹è¯•
+ * ä½œç”¨ï¼š1.ç¡®ä¿çº¿ç¨‹äº’æ–¥çš„è®¿é—®åŒæ­¥ä»£ç 
+ *       2.ä¿è¯å…±äº«å˜é‡çš„ä¿®æ”¹èƒ½å¤ŸåŠæ—¶å¯è§
+ *       3.æœ‰æ•ˆè§£å†³é‡æ’åºé—®é¢˜
+ * ç”¨æ³•ï¼š 1.ä¿®é¥°æ™®é€šæ–¹æ³•(è§ç¨‹åºSynchronizedTest1,çº¿ç¨‹2è¦ç­‰åˆ°çº¿ç¨‹1çš„method1æ‰§è¡Œå®Œæˆåæ‰å¼€å§‹æ‰§è¡Œmethod2æ–¹æ³•)
+ *        2.ä¿®é¥°é™æ€æ–¹æ³•(è§ç¨‹åºSynchronizedTest2)
+ *        3.ä¿®é¥°ä»£ç å—(è§ç¨‹åºSynchronizedTest3)
+ * è¿è¡Œç»“æœï¼šmethod 1 start
 			method 1 execute
 			method 1 end
 			method 2 start
@@ -17,7 +17,7 @@ package com.cy.synchronizedTest;
  */
 public class SynchronizedTest1 {
 	
-	//ĞŞÊÎÆÕÍ¨·½·¨method1
+	//ä¿®é¥°æ™®é€šæ–¹æ³•method1
 	public synchronized void method1() {
 		
 		System.out.println("method 1 start");
@@ -32,7 +32,7 @@ public class SynchronizedTest1 {
 		
 	}
 	
-	//ĞŞÊÎÆÕÍ¨·½·¨method2
+	//ä¿®é¥°æ™®é€šæ–¹æ³•method2
 	public synchronized void method2() {
 		
 		System.out.println("method 2 start");
