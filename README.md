@@ -9,7 +9,7 @@
 
 ## 用法
 * 修饰普通方法(见程序[SynchronizedTest1](https://github.com/amateur-RD/Coding-Test/blob/master/com/cy/synchronizedTest/SynchronizedTest1.java))
-* 修饰静态方法(类)(见程序[SynchronizedTest2](Coding-Test/com/cy/synchronizedTest/SynchronizedTest2.java))
+* 修饰静态方法(类)(见程序[SynchronizedTest2](https://github.com/amateur-RD/Coding-Test/blob/master/com/cy/synchronizedTest/SynchronizedTest2.java))
 * 修饰代码块(见程序[SynchronizedTest3](https://github.com/amateur-RD/Coding-Test/blob/master/com/cy/synchronizedTest/SynchronizedTest3.java))
 
 ## 原理
