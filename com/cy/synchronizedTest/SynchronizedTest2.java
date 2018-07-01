@@ -1,26 +1,24 @@
 package com.cy.synchronizedTest;
 
 /*
- * synchronized ¹Ø¼ü×ÖÔ­Àí²âÊÔ
- * ×÷ÓÃ£º 1.È·±£Ïß³Ì»¥³âµÄ·ÃÎÊÍ¬²½´úÂë
- *       2.±£Ö¤¹²Ïí±äÁ¿µÄĞŞ¸ÄÄÜ¹»¼°Ê±¿É¼û
- *       3.ÓĞĞ§½â¾öÖØÅÅĞòÎÊÌâ
- * ÓÃ·¨£º 1.ĞŞÊÎÆÕÍ¨·½·¨(¼û³ÌĞòSynchronizedTest1,Ïß³Ì2ÒªµÈµ½Ïß³Ì1µÄmethod1Ö´ĞĞÍê³Éºó²Å¿ªÊ¼Ö´ĞĞmethod2·½·¨)
- * 		 2.ĞŞÊÎ¾²Ì¬·½·¨(Àà)(¼û³ÌĞòSynchronizedTest2)
- * 		          ½âÊÍ£º¾²Ì¬·½·¨µÄÍ¬²½±¾ÖÊÉÏÊÇ¶ÔÀàµÄÍ¬²½(¾²Ì¬·½·¨±¾ÖÊÉÏÊÇÊôÓÚÀàµÄ·½·¨£¬¶ø²»ÊÇ¶ÔÏóÉÏµÄ·½·¨),
- *                 ËùÒÔ¼´Ê¹testºÍtest1ÊôÓÚ²»Í¬µÄ¶ÔÏó£¬µ«ÊÇËüÃÇÍ¬ÊôÓÚSynchronizedTest2ÀàµÄÊµÀı,
- *                 Òò´ËÖ»ÄÜË³ĞòÖ´ĞĞmethod1ºÍmethod2,²»ÄÜ²¢·¢Ö´ĞĞ¡£
- *       3.ĞŞÊÎ´úÂë¿é(¼û³ÌĞòSynchronizedTest3)
- * ÔËĞĞ½á¹û£ºmethod 1 start
-			method 1 execute
-			method 1 end
-			method 2 start
-			method 2 execute
-			method 2 end
+ * synchronized å…³é”®å­—åŸç†æµ‹è¯•
+ * ä½œç”¨ï¼š 1.ç¡®ä¿çº¿ç¨‹äº’æ–¥çš„è®¿é—®åŒæ­¥ä»£ç 
+ *       2.ä¿è¯å…±äº«å˜é‡çš„ä¿®æ”¹èƒ½å¤ŸåŠæ—¶å¯è§
+ *       3.æœ‰æ•ˆè§£å†³é‡æ’åºé—®é¢˜
+ * ç”¨æ³•ï¼š 1.ä¿®é¥°æ™®é€šæ–¹æ³•(è§ç¨‹åºSynchronizedTest1,çº¿ç¨‹2è¦ç­‰åˆ°çº¿ç¨‹1çš„method1æ‰§è¡Œå®Œæˆåæ‰å¼€å§‹æ‰§è¡Œmethod2æ–¹æ³•)
+ * 	 2.ä¿®é¥°é™æ€æ–¹æ³•(ç±»)(è§ç¨‹åºSynchronizedTest2)
+ * 	     è§£é‡Šï¼šé™æ€æ–¹æ³•çš„åŒæ­¥æœ¬è´¨ä¸Šæ˜¯å¯¹ç±»çš„åŒæ­¥(é™æ€æ–¹æ³•æœ¬è´¨ä¸Šæ˜¯å±äºç±»çš„æ–¹æ³•ï¼Œè€Œä¸æ˜¯å¯¹è±¡ä¸Šçš„æ–¹æ³•),æ‰€ä»¥å³ä½¿testå’Œtest1å±äºä¸åŒçš„å¯¹è±¡ï¼Œä½†æ˜¯å®ƒä»¬åŒå±äºSynchronizedTest2ç±»çš„å®ä¾‹,å› æ­¤åªèƒ½é¡ºåºæ‰§è¡Œmethod1å’Œmethod2,ä¸èƒ½å¹¶å‘æ‰§è¡Œã€‚
+ *       3.ä¿®é¥°ä»£ç å—(è§ç¨‹åºSynchronizedTest3)
+ * è¿è¡Œç»“æœï¼šmethod 1 start
+	    method 1 execute
+	    method 1 end
+	    method 2 start
+	    method 2 execute
+	    method 2 end
  */
 public class SynchronizedTest2 {
 	
-	//ĞŞÊÎÆÕÍ¨·½·¨method1
+	//ä¿®é¥°æ™®é€šæ–¹æ³•method1
 	public static synchronized void method1() {
 		
 		System.out.println("method 1 start");
@@ -35,7 +33,7 @@ public class SynchronizedTest2 {
 		
 	}
 	
-	//ĞŞÊÎÆÕÍ¨·½·¨method2
+	//ä¿®é¥°æ™®é€šæ–¹æ³•method2
 	public static synchronized void method2() {
 		
 		System.out.println("method 2 start");
