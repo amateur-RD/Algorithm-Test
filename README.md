@@ -34,4 +34,5 @@
 
 * 因此，这种依赖于操作系统Mutex Lock所实现的锁我们称之为“重量级锁”。JDK中对Synchronized做的种种优化，其核心都是为了减少这种重量级锁的使用。JDK1.6以后，为了减少获得锁和释放锁所带来的性能消耗，提高性能，引入了“偏向锁”和“轻量级锁”。无锁 --> 偏向锁 --> 轻量级 --> 重量级
 
-## From[原文](https://mp.weixin.qq.com/s/o6qbzDP9T8b4OLDp78E67A)
+## From
+* [原文](https://mp.weixin.qq.com/s/o6qbzDP9T8b4OLDp78E67A)
