@@ -1,28 +1,25 @@
 package com.cy.synchronizedTest;
 
 /*
- * synchronized ¹Ø¼ü×ÖÔ­Àí²âÊÔ
- * ×÷ÓÃ£º 1.È·±£Ïß³Ì»¥³âµÄ·ÃÎÊÍ¬²½´úÂë
- *       2.±£Ö¤¹²Ïí±äÁ¿µÄÐÞ¸ÄÄÜ¹»¼°Ê±¿É¼û
- *       3.ÓÐÐ§½â¾öÖØÅÅÐòÎÊÌâ
- * ÓÃ·¨£º 1.ÐÞÊÎÆÕÍ¨·½·¨(¼û³ÌÐòSynchronizedTest1,Ïß³Ì2ÒªµÈµ½Ïß³Ì1µÄmethod1Ö´ÐÐÍê³Éºó²Å¿ªÊ¼Ö´ÐÐmethod2·½·¨)
- * 		 2.ÐÞÊÎ¾²Ì¬·½·¨(Àà)(¼û³ÌÐòSynchronizedTest2)
- * 		          ½âÊÍ£º¾²Ì¬·½·¨µÄÍ¬²½±¾ÖÊÉÏÊÇ¶ÔÀàµÄÍ¬²½(¾²Ì¬·½·¨±¾ÖÊÉÏÊÇÊôÓÚÀàµÄ·½·¨£¬¶ø²»ÊÇ¶ÔÏóÉÏµÄ·½·¨)
- *                 ,ËùÒÔ¼´Ê¹testºÍtest1ÊôÓÚ²»Í¬µÄ¶ÔÏó£¬µ«ÊÇËüÃÇÍ¬ÊôÓÚSynchronizedTest2ÀàµÄÊµÀý
- *                 ,Òò´ËÖ»ÄÜË³ÐòÖ´ÐÐmethod1ºÍmethod2,²»ÄÜ²¢·¢Ö´ÐÐ¡£
- *       3.ÐÞÊÎ´úÂë¿é(¼û³ÌÐòSynchronizedTest3)
- *           ½âÊÍ£ºËäÈ»Ïß³Ì1ºÍÏß³Ì2¶¼½øÈë¶ÔÓ¦µÄ·½·¨¿ªÊ¼Ö´ÐÐ£¬µ«ÊÇÏß³Ì2ÔÚ½øÈëÍ¬²½¿éÖ®Ç°£¬ÐèÒªµÈ´ýÏß³Ì1ÖÐÍ¬²½¿éÖ´ÐÐÍê³É¡£
- * ÔËÐÐ½á¹û£ºmethod 1 start
-			method 1 execute
-			method 2 start
-			method 1 end
-			method 2 execute
-			method 2 end
-
+ * synchronized å…³é”®å­—åŽŸç†æµ‹è¯•
+ * ä½œç”¨ï¼š 1.ç¡®ä¿çº¿ç¨‹äº’æ–¥çš„è®¿é—®åŒæ­¥ä»£ç 
+ *       2.ä¿è¯å…±äº«å˜é‡çš„ä¿®æ”¹èƒ½å¤ŸåŠæ—¶å¯è§
+ *       3.æœ‰æ•ˆè§£å†³é‡æŽ’åºé—®é¢˜
+ * ç”¨æ³•ï¼š 1.ä¿®é¥°æ™®é€šæ–¹æ³•(è§ç¨‹åºSynchronizedTest1,çº¿ç¨‹2è¦ç­‰åˆ°çº¿ç¨‹1çš„method1æ‰§è¡Œå®ŒæˆåŽæ‰å¼€å§‹æ‰§è¡Œmethod2æ–¹æ³•)
+ * 	 2.ä¿®é¥°é™æ€æ–¹æ³•(ç±»)(è§ç¨‹åºSynchronizedTest2)
+ * 	      è§£é‡Šï¼šé™æ€æ–¹æ³•çš„åŒæ­¥æœ¬è´¨ä¸Šæ˜¯å¯¹ç±»çš„åŒæ­¥(é™æ€æ–¹æ³•æœ¬è´¨ä¸Šæ˜¯å±žäºŽç±»çš„æ–¹æ³•ï¼Œè€Œä¸æ˜¯å¯¹è±¡ä¸Šçš„æ–¹æ³•),æ‰€ä»¥å³ä½¿testå’Œtest1å±žäºŽä¸åŒçš„å¯¹è±¡ï¼Œä½†æ˜¯å®ƒä»¬åŒå±žäºŽSynchronizedTest2ç±»çš„å®žä¾‹,å› æ­¤åªèƒ½é¡ºåºæ‰§è¡Œmethod1å’Œmethod2,ä¸èƒ½å¹¶å‘æ‰§è¡Œã€‚
+ *       3.ä¿®é¥°ä»£ç å—(è§ç¨‹åºSynchronizedTest3)
+ *            è§£é‡Šï¼šè™½ç„¶çº¿ç¨‹1å’Œçº¿ç¨‹2éƒ½è¿›å…¥å¯¹åº”çš„æ–¹æ³•å¼€å§‹æ‰§è¡Œï¼Œä½†æ˜¯çº¿ç¨‹2åœ¨è¿›å…¥åŒæ­¥å—ä¹‹å‰ï¼Œéœ€è¦ç­‰å¾…çº¿ç¨‹1ä¸­åŒæ­¥å—æ‰§è¡Œå®Œæˆã€‚
+ * è¿è¡Œç»“æžœï¼šmethod 1 start
+	    method 1 execute
+	    method 2 start
+	    method 1 end
+	    method 2 execute
+	    method 2 end
  */
 public class SynchronizedTest3 {
 	
-	//ÐÞÊÎÆÕÍ¨·½·¨method1
+	//ä¿®é¥°æ™®é€šæ–¹æ³•method1
 	public void method1() {
 		
 		System.out.println("method 1 start");
@@ -39,7 +36,7 @@ public class SynchronizedTest3 {
 		
 	}
 	
-	//ÐÞÊÎÆÕÍ¨·½·¨method2
+	//ä¿®é¥°æ™®é€šæ–¹æ³•method2
 	public void method2() {
 		
 		System.out.println("method 2 start");
