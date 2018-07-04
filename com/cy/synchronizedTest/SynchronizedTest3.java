@@ -19,11 +19,11 @@ package com.cy.synchronizedTest;
  */
 public class SynchronizedTest3 {
 	
-	//修饰普通方法method1
 	public void method1() {
 		
 		System.out.println("method 1 start");
 		try {
+			//修饰代码块
 			synchronized(this) {
 				System.out.println("method 1 execute");
 				Thread.sleep(3000);
@@ -36,7 +36,6 @@ public class SynchronizedTest3 {
 		
 	}
 	
-	//修饰普通方法method2
 	public void method2() {
 		
 		System.out.println("method 2 start");
