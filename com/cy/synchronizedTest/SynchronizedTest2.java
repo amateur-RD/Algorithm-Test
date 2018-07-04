@@ -18,7 +18,7 @@ package com.cy.synchronizedTest;
  */
 public class SynchronizedTest2 {
 	
-	//修饰普通方法method1
+	//修饰静态方法method1
 	public static synchronized void method1() {
 		
 		System.out.println("method 1 start");
@@ -33,7 +33,7 @@ public class SynchronizedTest2 {
 		
 	}
 	
-	//修饰普通方法method2
+	//修饰静态方法method2
 	public static synchronized void method2() {
 		
 		System.out.println("method 2 start");
@@ -49,6 +49,7 @@ public class SynchronizedTest2 {
 
 	public static void main(String[] args) {
 
+		//创建两个不同的实例对象
 		final SynchronizedTest2 test = new SynchronizedTest2();
 		final SynchronizedTest2 test1 = new SynchronizedTest2();
 		new Thread(new Runnable() {
