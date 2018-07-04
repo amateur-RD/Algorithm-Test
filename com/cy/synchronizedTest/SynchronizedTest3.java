@@ -40,6 +40,7 @@ public class SynchronizedTest3 {
 		
 		System.out.println("method 2 start");
 		try {
+			//修饰代码块
 			synchronized(this) {
 				System.out.println("method 2 execute");
 				Thread.sleep(1000);
@@ -53,6 +54,7 @@ public class SynchronizedTest3 {
 
 	public static void main(String[] args) {
 
+		//创建实例对象
 		final SynchronizedTest3 test = new SynchronizedTest3();
 		new Thread(new Runnable() {
 			@Override
