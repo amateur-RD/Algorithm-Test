@@ -48,6 +48,7 @@ public class SynchronizedTest1 {
 
 	public static void main(String[] args) {
 
+		//创建实例对象
 		final SynchronizedTest1 test = new SynchronizedTest1();
 		new Thread(new Runnable() {
 			@Override
